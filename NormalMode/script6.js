@@ -4,7 +4,8 @@ const scoreElement = document.querySelector(".score");
 const controls = document.querySelectorAll(".controls i");
 const timer = document.querySelector(".timer");
 const sequenceBlock = document.querySelector(".sequence");
-const foodSound = new Audio('food.mp3');
+const foodSound = new Audio("food.mp3");
+const gameOverSound = new Audio("gameover.mp3");
 
 let startTime, endTime, duration;
 let timeLeft = 60;
@@ -112,6 +113,9 @@ const handleGameOver = () => {
     leaderList.reverse();
     leaderList.pop();
     localStorage.setItem("leaderboard", JSON.stringify(leaderList));
+    if (timeLeft > 0){
+        gameOverSound.play();
+    }
     //console.log(leaderList[0]);
     clearInterval(setIntervalId);
     alert("Game Over! Press OK to replay...");
