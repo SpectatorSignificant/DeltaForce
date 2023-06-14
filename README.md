@@ -1,1 +1,2 @@
-Delta Force Task 1 - Snake Game
+# Snake Game
+Delta Force Task 1
